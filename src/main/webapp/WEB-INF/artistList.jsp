@@ -7,9 +7,9 @@
 
     <ol>
         <c:forEach items="${ artists }" var="artist">
-	        <li>
-	           <c:out value="${ artist.getName() }" />
-	        </li>
+            <li>
+               <c:out value="${ artist.getName() }" />
+            </li>
         </c:forEach>
     </ol>
 </body>
