@@ -28,4 +28,9 @@ public class ShoppingListItem {
     public String getTitle() {
         return title;
     }
+
+    @Override
+    public String toString() {
+        return "ShoppingListItem [id=" + id + ", title=" + title + "]";
+    }
 }

@@ -76,5 +76,13 @@
 			<artifactId>tomcat-jasper-el</artifactId>
 			<version>${tomcat.version}</version>
 		</dependency>
+
+		<!-- https://github.com/google/gson/blob/master/UserGuide.md#using-gson-with-maven -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 </project>
