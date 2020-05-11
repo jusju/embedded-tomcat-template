@@ -37,8 +37,6 @@ public class DiscogsExample {
     }
 
     public static String get(String uri) throws Exception {
-        System.out.println(uri);
-
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
 
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
