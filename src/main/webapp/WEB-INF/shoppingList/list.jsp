@@ -12,6 +12,12 @@
 			value="Add to list" />
 	</form>
 
+	<c:if test="${ message != null }">
+		<h2>
+			<c:out value="${ message }"></c:out>
+		</h2>
+	</c:if>
+
 	<ul>
 		<c:forEach items="${ items }" var="shoppingListItem">
 			<li><c:out value="${ shoppingListItem.getTitle() }" /></li>
