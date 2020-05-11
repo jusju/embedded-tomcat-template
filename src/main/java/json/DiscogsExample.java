@@ -9,9 +9,9 @@ import java.util.List;
 
 import com.google.gson.Gson;
 
-import json.dicogs.Artist;
-import json.dicogs.Release;
-import json.dicogs.ReleasesResponse;
+import json.discogs.Artist;
+import json.discogs.Release;
+import json.discogs.ReleasesResponse;
 
 public class DiscogsExample {
 

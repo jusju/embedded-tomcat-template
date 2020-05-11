@@ -1,4 +1,4 @@
-package json.dicogs;
+package json.discogs;
 
 import java.util.List;
 

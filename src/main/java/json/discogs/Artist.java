@@ -1,4 +1,4 @@
-package json.dicogs;
+package json.discogs;
 
 public class Artist {
 
