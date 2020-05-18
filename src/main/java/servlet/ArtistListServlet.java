@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import database.ArtistDao;
 import model.Artist;
 
-@WebServlet("/")
+@WebServlet("")
 public class ArtistListServlet extends HttpServlet {
 
     private ArtistDao dao = new ArtistDao();
