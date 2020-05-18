@@ -104,7 +104,10 @@ public class JDBCShoppingListItemDao implements ShoppingListItemDao {
         try {
             connection = this.db.connect();
             statement = connection.prepareStatement("DELETE FROM ShoppingListItem WHERE id = ?");
+
+            // asetetaan kysymysmerkin paikalle dynaamisesti id-arvo:
             statement.setLong(1, item.getId());
+
             int rows = statement.executeUpdate();
             if (rows == 1) {
                 return true;

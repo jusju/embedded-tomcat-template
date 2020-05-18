@@ -24,16 +24,6 @@ public class ShoppingListServlet extends HttpServlet {
 
         req.setAttribute("items", allItems);
 
-        // BONUS: lisätään sivulle tieto onnistuneesta lisäyksestä
-        String message = (String) req.getSession().getAttribute("message");
-        if (message != null) {
-            // laitetaan viesti JSP-sivun saataville
-            req.setAttribute("message", message);
-
-            // poistetaan viesti istunnosta
-            req.getSession().removeAttribute("message");
-        }
-
         req.getRequestDispatcher("/WEB-INF/shoppingList/list.jsp").forward(req, resp);
     }
 
@@ -46,13 +36,18 @@ public class ShoppingListServlet extends HttpServlet {
 
         boolean success = this.dao.addItem(newItem);
 
-        // BONUS: laitetaan istuntoon talteen viesti:
-        if (success) {
-            req.getSession().setAttribute("message", "Saving " + title + " succeeded");
-        } else {
-            req.getSession().setAttribute("message", "Saving " + title + " was not successful :(");
-        }
-
         resp.sendRedirect("/list");
+    }
+
+    @Override
+    public void doDelete(HttpServletRequest req, HttpServletResponse resp) {
+        long id = Long.parseLong(req.getParameter("id"));
+        ShoppingListItem itemToRemove = this.dao.getItem(id);
+
+        if (itemToRemove != null) {
+            this.dao.removeItem(itemToRemove);
+        } else {
+            resp.setStatus(404);
+        }
     }
 }

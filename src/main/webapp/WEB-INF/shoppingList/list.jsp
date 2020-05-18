@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Shopping List</title>
+<script src="/js/app.js"></script>
 </head>
 <body>
 	<h1>Shopping list</h1>
@@ -12,15 +13,11 @@
 			value="Add to list" />
 	</form>
 
-	<c:if test="${ message != null }">
-		<h2>
-			<c:out value="${ message }"></c:out>
-		</h2>
-	</c:if>
-
 	<ul>
 		<c:forEach items="${ items }" var="shoppingListItem">
-			<li><c:out value="${ shoppingListItem.getTitle() }" /></li>
+			<li id="product-${ shoppingListItem.getId() }"><c:out value="${ shoppingListItem.getTitle() }" />
+				<button onclick="removeProduct(${ shoppingListItem.getId() })">Remove</button>
+			</li>
 		</c:forEach>
 	</ul>
 
